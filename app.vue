@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { FormKitNode } from "@formkit/core";
 
 interface IFields {
   backgroundURL: string
@@ -11,7 +10,9 @@ interface IFields {
 const previewUrl: Ref<string | null>= ref(null);
 
 async function createCard(fields: IFields) {
-  const apiBase = "http://127.0.0.1:8000";
+  // const apiBase = "http://127.0.0.1:8000";
+  const apiBase = "http://92.255.109.128:8008";
+
   const url = `${apiBase}/v1/card?title=${encodeURIComponent(fields.title)}` 
   + `&url=${encodeURIComponent(fields.siteURL)}`
   + `&profileURL=${encodeURIComponent(fields.profileURL)}`
